@@ -295,9 +295,10 @@ if( UNIX )
           ecbuild_warn( "The linker does not support $ORIGIN at link-time, \
             disabling dynamic symbol check when linking against shared libraries" )
 
-          set(CMAKE_EXE_LINKER_FLAGS     "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--allow-shlib-undefined")
-          set(CMAKE_SHARED_LINKER_FLAGS  "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-shlib-undefined")
-          set(CMAKE_MODULE_LINKER_FLAGS  "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--allow-shlib-undefined")
+# Commented out for gchp_ctm environments (ewl, 12/10/19)
+#          set(CMAKE_EXE_LINKER_FLAGS     "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--allow-shlib-undefined")
+#          set(CMAKE_SHARED_LINKER_FLAGS  "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-shlib-undefined")
+#          set(CMAKE_MODULE_LINKER_FLAGS  "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--allow-shlib-undefined")
         endif()
       endif()
     endif()
