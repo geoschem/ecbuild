@@ -292,8 +292,9 @@ if( UNIX )
         try_compile( _linker_understands_origin
           ${_linker_check_bindir} ${_linker_check_srcdir} test_ld_origin )
         if( NOT ${_linker_understands_origin} )
-          ecbuild_warn( "The linker does not support $ORIGIN at link-time, \
-            disabling dynamic symbol check when linking against shared libraries" )
+# Commented out for gchp_ctm environments (lrb, 10/01/20)
+#          ecbuild_warn( "The linker does not support $ORIGIN at link-time, \
+#            disabling dynamic symbol check when linking against shared libraries" )
 
 # Commented out for gchp_ctm environments (ewl, 12/10/19)
 #          set(CMAKE_EXE_LINKER_FLAGS     "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--allow-shlib-undefined")
