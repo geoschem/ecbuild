@@ -10,7 +10,9 @@ set( CMAKE_Fortran_FLAGS_RELEASE        "-O3 -DNDEBUG -funroll-all-loops -finlin
 set( CMAKE_Fortran_FLAGS_BIT            "-O2 -DNDEBUG -fno-range-check -fconvert=big-endian" CACHE STRING "Fortran compiler flags for Bit-reproducible builds" FORCE )
 set( CMAKE_Fortran_FLAGS_DEBUG          "-O0 -g -fcheck=bounds -fbacktrace -finit-real=snan" CACHE STRING "Fortran compiler flags for Debug builds"            FORCE )
 set( CMAKE_Fortran_FLAGS_PRODUCTION     "-O2 -g"                                             CACHE STRING "Fortran compiler flags for Production builds."      FORCE )
-set( CMAKE_Fortran_FLAGS_RELWITHDEBINFO "-O2 -g -DNDEBUG"                                    CACHE STRING "Fortran compiler flags for RelWithDebInfo builds."  FORCE )
+# Add flags for building GCHP with GNU 10
+set( CMAKE_Fortran_FLAGS_RELWITHDEBINFO "-O2 -g -DNDEBUG -fallow-argument-mismatch -fallow-invalid-boz"
+     CACHE STRING "Fortran compiler flags for RelWithDebInfo builds."  FORCE )
 
 set( Fortran_FLAG_STACK_ARRAYS "-fstack-arrays" )
 
